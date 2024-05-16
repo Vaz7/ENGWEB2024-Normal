@@ -1,0 +1,49 @@
+extends layout
+
+block content
+  .w3-card4
+    header.w3-container.w3-pink(style='display: flex; justify-content: space-between; align-items: center;')
+      h1 Contrato #{contrato._id}
+      a.w3-button.w3-round.w3-grey(href="/", style='margin-left: auto;') Back
+    .w3-container 
+      table.w3-table-all 
+        tr 
+          th Field
+          th Data
+        tr 
+          td ID Contrato
+          td= contrato._id
+        tr
+          td n Anuncio
+          td= contrato.nAnuncio
+        tr
+          td Tipo Procedimento
+          td= contrato.tipoprocedimento
+        tr
+          td Objecto Contrato
+          td= contrato.objectoContrato
+        tr
+          td Data Publicacao
+          td= contrato.dataPublicacao
+        tr
+          td Data Celebracao Contrato
+          td= contrato.dataCelebracaoContrato
+        tr
+          td Preco Contratual
+          td= contrato.precoContratual
+        tr
+          td Prazo Execucao
+          td= contrato.prazoExecucao
+        tr
+          td NIPC Entidade Comunicante
+          td= contrato.NIPC_entidade_comunicante
+        tr
+          td Entidade Comunicante
+          td= contrato.entidade_comunicante
+        tr
+          td Fundamentacao
+          td= contrato.fundamentacao
+        
+
+    footer.w3-container.w3-pink 
+      address Gerado por EngWeb2024 em #{data}

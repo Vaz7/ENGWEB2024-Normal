@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  .w3-card4
+    header.w3-container.w3-pink
+      h1 Lista de Contratos
+    .w3-container 
+      table.w3-table-all 
+        tr 
+          th ID contrato  
+          th Objeto Contrato 
+          th Data Celebracao Contrato 
+          th Preco Contratual
+          th NIPC Entidade Comunicante 
+          th Entidade Comunicante
+        each contrato in lista 
+          tr 
+            td
+              a(href=`/${contrato._id}`)= contrato._id
+            td= contrato.objectoContrato
+            td= contrato.dataCelebracaoContrato
+            td= contrato.precoContratual
+            td
+              a(href=`/entidades/${contrato.NIPC_entidade_comunicante}`)= contrato.NIPC_entidade_comunicante
+            td= contrato.entidade_comunicante
+
+    footer.w3-container.w3-pink 
+      address Gerado por EngWeb2024 em #{data}
